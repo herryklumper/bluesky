@@ -27,15 +27,14 @@ from bluesky import settings
 # Register settings defaults
 settings.set_variable_defaults(performance_model='bluesky', snapdt=1.0, instdt=1.0, skydt=1.0, asas_pzr=5.0, asas_pzh=1000.0)
 
-from .performance.legacy.performance import phases as test
-from .performance.legacy.perfbs import test as test
+from bluesky.traffic.performance.legacy.perfbs import test as test
 
 test
 
 try:
     if settings.performance_model == 'bluesky':
         print('Using BlueSky performance model')
-        from .performance.legacy.perfbs import PerfBS as Perf
+        from .performance.test.perfbs import PerfBS as Perf
 
     elif settings.performance_model == 'bada':
         print('Using BADA Performance model')
@@ -382,7 +381,7 @@ class Traffic(TrafficArrays):
         self.UpdateGroundSpeed(simdt)
         self.UpdatePosition(simdt)
 
-        #---------- Legacy and BADA Performance Update ------------------------
+        #---------- test and BADA Performance Update ------------------------
         if settings.performance_model in ['bluesky', 'bada']:
             self.perf.perf(simt)
 
@@ -401,7 +400,7 @@ class Traffic(TrafficArrays):
         delta_spd = self.pilot.tas - self.tas
         need_ax = np.abs(delta_spd) > kts     # small threshold
         self.ax = need_ax * np.sign(delta_spd) * self.perf.acceleration()
-        self.delspd = delta_spd  # class object for legacy performance models
+        self.delspd = delta_spd  # class object for test performance models
 
         # Update velocities
         self.tas = self.tas + self.ax * simdt
