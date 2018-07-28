@@ -27,17 +27,22 @@ from bluesky import settings
 # Register settings defaults
 settings.set_variable_defaults(performance_model='bluesky', snapdt=1.0, instdt=1.0, skydt=1.0, asas_pzr=5.0, asas_pzh=1000.0)
 
+from .performance.legacy.performance import phases as test
+from .performance.legacy.perfbs import test as test
+
+test
+
 try:
     if settings.performance_model == 'bluesky':
         print('Using BlueSky performance model')
         from .performance.legacy.perfbs import PerfBS as Perf
 
     elif settings.performance_model == 'bada':
-        print('Using BADA Perfromance model')
+        print('Using BADA Performance model')
         from .performance.bada.perfbada import PerfBADA as Perf
 
     elif settings.performance_model == 'openap':
-        print('Using Open Aircrafft Perfromance (OpenAP) model')
+        print('Using Open Aircrafft Performance (OpenAP) model')
         from .performance.openap import OpenAP as Perf
 
 except ImportError as err:

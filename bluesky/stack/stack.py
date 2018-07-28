@@ -992,7 +992,7 @@ def sched_cmd(time, args, relative=False):
     return True
 
 
-def openfile(fname, *args, mergeWithExisting=False):
+def openfile(fname, mergeWithExisting=False, *args):
     global scentime, scencmd
 
     orgfname = fname # Save original filename for if path spalitting fails (relative path)

@@ -2,7 +2,7 @@
 import random
 import numpy as np
 import bluesky as bs
-from bluesky import stack
+#from bluesky import stack
 from bluesky.tools.aero import ft, eas2tas
 from bluesky.tools import geo
 from bluesky.tools.misc import txt2alt, txt2spd

@@ -16,6 +16,11 @@ from bluesky.traffic.performance.legacy.coeff_bs import CoeffBS
 settings.set_variable_defaults(perf_path='data/performance/BS', verbose=False)
 coeffBS = CoeffBS()
 
+#tijdelijk om import error in traffic.py op te lossen
+def test:
+    a=1
+    print('dit is een test')
+#tijdelijk voor oplossen import error in traffic .py
 
 class PerfBS(TrafficArrays):
     def __init__(self):
@@ -86,7 +91,7 @@ class PerfBS(TrafficArrays):
             self.PSFC_CR      = np.array([]) # specific fuel consumption cruise
 
             self.Thr          = np.array([]) # Thrust
-            self.Thr_pilot	 = np.array([])   # thrust required for pilot settings
+            self.Thr_pilot	  = np.array([])   # thrust required for pilot settings
             self.D            = np.array([]) # Drag
             self.ESF          = np.array([]) # Energy share factor according to EUROCONTROL
 

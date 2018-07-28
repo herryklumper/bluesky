@@ -1,4 +1,4 @@
-""" 
+"""
 Standard Dialog modules, using Tkinter
 
 Created by  : Jacco M. Hoekstra
@@ -9,11 +9,11 @@ try:
 except:
     try:
         from Tkinter import *
-        import Tkinter.tkFileDialog as filedialog
+        import tkFileDialog as filedialog
     except:
         from Tkinter import *
         import Tkinter.filedialog as filedialog
-        
+
 import os
 from bluesky import settings
 
@@ -25,14 +25,14 @@ def fileopen():
     if sys.platform == 'darwin':
        return ''
 
-    dirpath = settings.scenario_path 
+    dirpath = settings.scenario_path
     os.chdir(dirpath)
 
     master = Tk()
     master.withdraw()  # hiding tkinter window
     master.focus_set()
-    
-    file_path = filedialog.askopenfilename(title="Open scenario file", 
+
+    file_path = filedialog.askopenfilename(title="Open scenario file",
         filetypes=[("Scenario files",".scn"),("All files",".*")],\
         initialdir=".")
 
