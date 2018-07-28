@@ -27,9 +27,12 @@ from bluesky import settings
 # Register settings defaults
 settings.set_variable_defaults(performance_model='bluesky', snapdt=1.0, instdt=1.0, skydt=1.0, asas_pzr=5.0, asas_pzh=1000.0)
 
-from bluesky.traffic.performance.legacy.perfbs import test as test
+# added below for testing pupose against No module named legacy
+#from .performance.test.test import test as test
+from .performance.test.test import test as test
 
 test
+# added above for testing pupose against No module named legacy
 
 try:
     if settings.performance_model == 'bluesky':
@@ -47,7 +50,8 @@ try:
 except ImportError as err:
     print(err.args[0])
     print('Falling back to BlueSky performance model')
-    from .performance.legacy.perfbs import PerfBS as Perf
+    #from .performance.legacy.perfbs import PerfBS as Perf
+    from .performance.test.test import test as Perf
 
 
 class Traffic(TrafficArrays):
