@@ -29,7 +29,7 @@ from bluesky.tools.position import txt2pos, islat
 from bluesky import settings
 
 # Temporary fix for synthetic
-from . import synthetic as syn
+from .import synthetic as syn
 # Register settings defaults
 settings.set_variable_defaults(start_location='EHAM', scenario_path='scenario', scenfile='')
 
@@ -1333,8 +1333,8 @@ def process():
             helptext, argtypes, argisopt, function = stackfun[:4]
 
             # Start with a fresh argument parser for each command
-            parser  = Argparser(argtypes, argisopt, args, function.__defaults__)
-
+            #parser  = Argparser(argtypes, argisopt, args, function.__defaults__) commented out for test
+            parser = Argparser(argtypes, argisopt, args, function.__defaults__)
             # Call function return flag,text
             # flag: indicates sucess
             # text: optional error message

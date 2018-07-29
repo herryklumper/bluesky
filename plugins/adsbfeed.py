@@ -8,7 +8,7 @@ import adsb_decoder as decoder
 
 ## Default settings
 # Mode-S / ADS-B server hostname/ip, and server port
-settings.set_variable_defaults(modeS_host='', modeS_port=0)
+settings.set_variable_defaults(modeS_host='192.168.100.17', modeS_port=30005)
 
 # Global data
 reader = None
@@ -23,7 +23,7 @@ def init_plugin():
     config = {
         'plugin_name':     'DATAFEED',
         'plugin_type':     'sim',
-        'update_interval': 0.0,
+        'update_interval': 2.5,
         'preupdate':       reader.update
         }
 
