@@ -8,7 +8,8 @@ import adsb_decoder as decoder
 
 ## Default settings
 # Mode-S / ADS-B server hostname/ip, and server port
-settings.set_variable_defaults(modeS_host='192.168.100.17', modeS_port=30005)
+#settings.set_variable_defaults(modeS_host='192.168.100.17', modeS_port=30005)
+settings.set_variable_defaults(modeS_host='37.210.247.83', modeS_port=30003)
 
 # Global data
 reader = None
