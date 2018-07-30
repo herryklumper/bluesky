@@ -30,10 +30,8 @@ COPY requirements.txt /bluesky/
 RUN pip install -U pip
 RUN pip install -r requirements.txt
 
-pip install \
-  PyOpenGL==3.1.0 \
-  PyOpenGL-accelerate==3.1.0 \
-  
+RUN pip install PyOpenGL==3.1.0
+
 COPY . /bluesky/
 
 # Specify the command to run when the image is run.
