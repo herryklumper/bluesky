@@ -4,12 +4,9 @@
 # docker run -it hjklumper/bluesky
 
 
-
-
-
 # Start with a Python image.
 FROM python:3.7.0
-MAINTAINER Bart Steverink <bart@in2systems.nl>
+MAINTAINER Herry Klumper<herry.klumper@gmail.com>
 
 # Some stuff that everyone has been copy-pasting
 # since the dawn of time.
@@ -35,4 +32,4 @@ RUN pip install PyOpenGL==3.1.0
 COPY . /bluesky/
 
 # Specify the command to run when the image is run.
-CMD ["python", "BlueSky.py"]
+CMD ["python", "./BlueSky.py"]
