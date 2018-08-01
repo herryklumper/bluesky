@@ -1,7 +1,9 @@
 # step 1
-# docker build -t hjklumper/bluesky .
+# docker build -t herryklumper/bluesky .
 # step 2
-# docker run -it hjklumper/bluesky
+# docker run -it herryklumper/bluesky
+# docker run herryklumper/bluesky als je een lokaal bestand start
+# # docker run -it herryklumper/bluesky /bin/bash
 
 
 # Start with a Python image.
@@ -21,19 +23,13 @@ RUN mkdir /bluesky
 WORKDIR /bluesky
 
 
-COPY requirements.txt /bluesky/
+COPY requirements.txt /bluesky
 
 # Install our requirements.
-RUN pip install -U pip
+RUN pip install -U pip # naar latest version upgrade
 RUN pip install -r requirements.txt
 
-RUN pip install PyOpenGL==3.1.0
-
-COPY . /bluesky/
-
-RUN python check.py
-RUN python -V
-RUN ls -lia
+COPY . /bluesky
 
 # Specify the command to run when the image is run.
-CMD ["python", "BlueSky.py"]
+CMD ["python" ,"BlueSky.py"]
