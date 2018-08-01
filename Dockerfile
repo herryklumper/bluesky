@@ -36,4 +36,4 @@ RUN python -V
 RUN ls -lia
 
 # Specify the command to run when the image is run.
-CMD ["python BlueSky.py"]
+CMD ["python", "BlueSky.py"]
