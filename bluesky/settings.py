@@ -3,6 +3,8 @@ import os
 import sys
 import shutil
 
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+
 def init():
     '''Initialize configuration.
        Import config settings from settings.cfg if this exists, if it doesn't
