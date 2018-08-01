@@ -4,6 +4,9 @@ from __future__ import print_function
 from bluesky import settings
 import bluesky as bs
 
+a = python -V
+print(a)
+
 print("   *****   BlueSky Open ATM simulator *****")
 print("Distributed under GNU General Public License v3")
 
