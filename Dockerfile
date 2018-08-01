@@ -3,7 +3,8 @@
 # step 2
 # docker run -it herryklumper/bluesky
 # docker run herryklumper/bluesky als je een lokaal bestand start
-# # docker run -it herryklumper/bluesky /bin/bash
+# docker run -it herryklumper/bluesky /bin/bash
+#
 
 
 # Start with a Python image.

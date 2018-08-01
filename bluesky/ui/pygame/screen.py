@@ -176,14 +176,14 @@ class Screen:
         if self.swfullscreen:
             self.width = di.current_w
             self.height = di.current_h
-            reso = (1680, 1050)
+            reso = (self.width, self.height)
             self.win = pg.display.set_mode(reso, pg.FULLSCREEN)
         else:
             # Windowed
             self.height = int(min(self.height, di.current_h * 90 / 100))
             self.width = int(min(self.width, di.current_w * 90 / 100))
             reso = (self.width, self.height)
-            self.win = pg.display.set_mode(1680, 1050)
+            self.win = pg.display.set_mode(reso)
 
         pg.display.set_caption("BlueSky Open ATM Simulator (F11 = Full Screen)", "BlueSky")
         iconpath = imgpath = "data/graphics/icon.gif"
@@ -1075,13 +1075,13 @@ class Screen:
             # Full screen mode
             self.width = di.current_w
             self.height = di.current_h
-            reso = (1680, 1050)
+            reso = (self.width, self.height)
             self.win = pg.display.set_mode(reso, pg.FULLSCREEN | pg.HWSURFACE)
         else:
             # Windowed
             self.height = min(self.height, di.current_h * 90 / 100)
             self.width = min(self.width, di.current_w * 90 / 100)
-            reso = (1680, 1050)
+            reso = (self.width, self.height)
             self.win = pg.display.set_mode(reso)
 
         # Adjust scaling
