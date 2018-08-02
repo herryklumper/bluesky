@@ -4,8 +4,10 @@ from __future__ import print_function
 from bluesky import settings
 import bluesky as bs
 
+
+
 import sys
-print("Python version")
+print(" Hello this is Python version")
 print (sys.version)
 
 print("   *****   BlueSky Open ATM simulator *****")
