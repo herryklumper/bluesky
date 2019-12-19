@@ -5,6 +5,8 @@
 # docker run herryklumper/bluesky als je een lokaal bestand start
 # docker run -it herryklumper/bluesky /bin/bash
 #
+#mount drive to container
+#docker run -it --name xxxxx -v ~/Sites/bluesky:/bluesky bash
 
 
 # Start with a Python image.
